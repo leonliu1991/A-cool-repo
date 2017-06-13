@@ -1,5 +1,5 @@
-﻿$token = "c4fzdhrfizv37owbw2ekvqwwbajb6xoj5pnvil4qpmx7lyce46bq"
-$at_result_uri="https://vmob.visualstudio.com/DefaultCollection/" $projectName "/_apis/test/runs/query?automated=true&api-version=2.0-preview"
+﻿$token = "xxx"
+$at_result_uri="https://xxx.visualstudio.com/DefaultCollection/" $projectName "/_apis/test/runs/query?automated=true&api-version=2.0-preview"
 
 #Sory the result by TestRunId so that the latest result can be retrived.
 
@@ -11,22 +11,11 @@ $base64authinfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0
 $responseFromGet = Invoke-RestMethod -Method Post -Body $body -ContentType application/json -Uri $at_result_uri -Headers @{Authorization=("Basic {0}" -f $base64authinfo)}
 $EnvironmentName = ("dev-1", "Dev-1", "at-1","AT-1", "qa-1","QA-1")
 $ServiceName = New-Object System.Collections.ArrayList
-$ServiceName.Add('Analytics')
-$ServiceName.Add('Beacons')
-$ServiceName.Add('Bulk Content')
-$ServiceName.Add('Campaign')
-$ServiceName.Add('Categories')
-$ServiceName.Add('Content Pack')
-$ServiceName.Add('Geofences')
-$ServiceName.Add('Loyalty Cards')
-$ServiceName.Add('Offer')
-$ServiceName.Add('Push Message')
-$ServiceName.Add('Security')
-$ServiceName.Add('Tags')
-$ServiceName.Add('Targeting')
-$ServiceName.Add('Tenants')
-$ServiceName.Add('Venues')
-$ServiceName.Add('Workflow')
+$ServiceName.Add('Microservice1')
+$ServiceName.Add('Microservice2')
+$ServiceName.Add('Microservice3')
+$ServiceName.Add('Microservice4')
+$ServiceName.Add('Microservice5')
 
 # Sender's username and password
 $username = "" 
